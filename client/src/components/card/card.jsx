@@ -17,7 +17,7 @@ function Card({ id, title, image, diets }) {
           <h3>{title}</h3>
         </div>
         <div className={styles.image}>
-          <img src={image} alt="image not Found" width="150px" height="100px" />
+          <img src={image} alt="image not Found" width="150px" height="100px"  />
         </div>
         <div className={styles.foot}>
           <div className={styles.diets}>

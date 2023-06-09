@@ -5,7 +5,8 @@ const { API_KEY, URL_SPOONACULAR } = process.env;
 
 const getTypesDiets = async () => {
   const typesDiet = await axios.get(
-    `${URL_SPOONACULAR}/recipes/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true`
+  /*   `${URL_SPOONACULAR}/recipes/complexSearch?apiKey=${API_KEY}&number=100&addRecipeInformation=true` */
+  `https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`
   );
   const dato = typesDiet.data.results;
 

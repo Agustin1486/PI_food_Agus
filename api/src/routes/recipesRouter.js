@@ -47,7 +47,8 @@ router.get("/", async (req, res, next) => {
           summary: r.summary,
           healthScore: r.healthScore,
           steps: r.steps,
-          diets: r.diets.length > 0 &&  r.diets /* : r.Diets.map((r) => r.name) */,
+          diets:
+            r.diets.length > 0 && r.diets /* : r.Diets.map((r) => r.name) */,
         };
       });
       return res.status(200).send(recipes);
@@ -80,6 +81,7 @@ router.get("/:id", async (req, res, next) => {
 
 router.post("/", async (req, res, next) => {
   const { title, summary, healthScore, image, steps, diets } = req.body;
+
   try {
     const newRecipe = await Recipe.create({
       title,
@@ -91,16 +93,15 @@ router.post("/", async (req, res, next) => {
 
     const dietas = await Diets.findAll({
       where: {
-        name:{[Op.in]: diets},
-      }
-    })
+        name: { [Op.in]: diets },
+      },
+    });
 
-    const respuesta = dietas.map(el => el.id)
+    const respuesta = dietas.map((el) => el.id);
     console.log(respuesta, "esto es respuesta");
     await newRecipe.addDiets(respuesta);
 
     return res.status(200).send(newRecipe);
-
   } catch (err) {
     next(err);
   }

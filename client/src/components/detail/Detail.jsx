@@ -45,7 +45,7 @@ function Detail() {
         </div> */}
         <div className={styles.scores}>
           <h3 className={styles.h3score}>
-            Health score..:{detail.healthScore}
+            Health score:{detail.healthScore}
           </h3>
         </div>
       </div>

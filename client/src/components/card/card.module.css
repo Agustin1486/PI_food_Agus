@@ -16,10 +16,10 @@
 }
 
 .title {
-  /* background: rgb(129, 128, 240);
+  background: rgb(129, 128, 240);
   height: 80px;
   padding: 5px;
-  border-radius: 12px 12px 0px 0px; */
+  border-radius: 12px 12px 0px 0px;
   margin-bottom: 1rem;
   background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
 }
@@ -55,6 +55,11 @@
   width: 40%;
   height: 125px;
 }
+
+.image {
+  border-radius: 50%;
+}
+
 
 .image:hover {
   border-radius: 20%;
